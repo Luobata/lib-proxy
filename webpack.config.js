@@ -51,7 +51,7 @@ module.exports = {
 
     devServer: {
         contentBase: "./src/",
-        port: 9999,
+        port: 9998,
         colors: true,
         historyApiFallback: true,
         inline: true
