@@ -3,6 +3,7 @@
  */
 import { noop, isFun } from 'LIB/util';
 import request from 'PROXY/request';
+import match from 'PROXY/match';
 
 export default class Proxy {
 
@@ -21,9 +22,17 @@ export default class Proxy {
         this.before = config.before || noop;
         this.after = config.after || noop;
         this.ajax = config.ajax || noop;
-        this.match = config.match || noop;
+        this.match = config.match;
+
+        this.match && this.format(config);
 
         return this.promiseGen(config);
+    };
+
+    format (
+        config: object
+    ) {
+        this.params = this.match.call(config, match);
     };
 
     promiseGen (

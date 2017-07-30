@@ -12,6 +12,7 @@ let proxy = new Proxy({
     },
     match: function (match) {
         console.log(match);
+        return this.params;
     },
     ajax: function (request, resolve, reject) {
         request.ajax({

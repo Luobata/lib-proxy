@@ -15,6 +15,8 @@ module.exports = {
         filename: "bundle.js"
     },
     resolve: {
+        extensions: ['', '.js', '.vue'],
+        fallback: [path.join(__dirname, '../node_modules')],
         alias: {
            PROXY: path.resolve(__dirname, 'src/proxy'),
            LIB: path.resolve(__dirname, 'src/lib'),
