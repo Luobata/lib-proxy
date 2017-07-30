@@ -31,9 +31,13 @@
 
 ### 参数说明
 | 参数 | 默认值 | 含义 |
-| ---- | :----: | ---: |
+| ---- | :----: | :--- |
 | params | {} | 请求对应的唯一参数 |
 | url | '' | 用来映射到dev-tools |
+| before | | function 函数前统一过滤器 可以注册全局前处理器 |
+| after | | function 函数处理后统一处理器 可以注册全局后处理器 |
+| match | | function 处理match过程的函数 args(match) 提供的lib-match对象 |
+| ajax | | function 发送请求的函数 包装成一个promise对象，args(request, resolve, reject) request lib-request 默认为lib-request 对象，resolve, reject, promise相关对象 |
 
 1. params
 请求对应唯一的参数
