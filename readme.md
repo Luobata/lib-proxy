@@ -17,6 +17,7 @@
     let proxy = new Proxy({
         params: data,
         url: '',
+        isContinues: false,
         before: function (next) {
         },
         match: function (match) {
@@ -34,6 +35,7 @@
 | ---- | :----: | :--- |
 | params | {} | 请求对应的唯一参数 |
 | url | '' | 用来映射到proxy-devtools |
+| isContinues | false | 针对连续的请求，保证先发后收到的请求回调不执行，保证请求顺序 |
 | before | | function 函数前统一过滤器 可以注册全局前处理器 |
 | after | | function 函数处理后统一处理器 可以注册全局后处理器 |
 | match | | function 处理match过程的函数 args(match) 提供的lib-match对象 |
