@@ -4,12 +4,13 @@
 
 let stackArr = [];
 
+window.MATCH_STACK = stackArr;
+
 export const pushStack = (
     stack: Stack
 ) => {
     stackArr.push(stack);
-    console.log(stackArr);
-}
+};
 
 export class Stack {
     url: string;
